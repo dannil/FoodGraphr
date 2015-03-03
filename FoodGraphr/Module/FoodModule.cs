@@ -1,10 +1,8 @@
 ﻿using Nancy;
 using NancyHelloWorld.Model;
-using RestSharp;
-using System.Collections;
 using System.Collections.Generic;
 
-namespace NancyHelloWorld
+namespace NancyHelloWorld.Module
 {
     public class FoodModule : NancyModule
     {

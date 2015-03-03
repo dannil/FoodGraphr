@@ -73,7 +73,7 @@
     <Compile Include="Model\API.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Model\Food.cs" />
-    <Compile Include="FoodModule.cs" />
+    <Compile Include="Module\FoodModule.cs" />
     <Compile Include="Model\Nutrient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
