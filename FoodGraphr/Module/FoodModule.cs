@@ -1,6 +1,9 @@
 ﻿using Nancy;
 using NancyHelloWorld.Model;
+using NancyHelloWorld.Model.Charts;
+using NancyHelloWorld.Utility;
 using System.Collections.Generic;
+using System.Web;
 
 namespace NancyHelloWorld.Module
 {
@@ -25,7 +28,7 @@ namespace NancyHelloWorld.Module
             {
                 Food f = api.GetFood(parameters.id);
                 double total = 0;
-                foreach (KeyValuePair<string, double> pair in f.NutrientValues)
+                foreach (KeyValuePair<string, float> pair in f.NutrientValues)
                 {
                     System.Diagnostics.Debug.WriteLine(pair.Key + " " + pair.Value + " " + test[pair.Key].Unit);
 
@@ -44,6 +47,23 @@ namespace NancyHelloWorld.Module
                 }
 
                 System.Diagnostics.Debug.WriteLine("TOTAL: " + total);
+
+                PieChart chart = new PieChart(540, 280);
+
+                chart.SetTitle(f.Name);
+                chart.SetData(new float[] { f.NutrientValues["fat"],
+                                            f.NutrientValues["carbohydrates"],
+                                            f.NutrientValues["fibres"] });
+
+                chart.SetLabels(new string[] { f.NutrientValues["fat"].ToString() + " g",
+                                               f.NutrientValues["carbohydrates"].ToString() + " g",
+                                               f.NutrientValues["fibres"].ToString() + " g" });
+
+                chart.SetLegends(new string[] { "Fat", "Carbohydrates", "Fibres" });
+
+                System.Diagnostics.Debug.WriteLine(chart.GetUrl());
+
+                ChartGenerator.GenerateMassChart(f);
 
                 return View["food", f];
             };
