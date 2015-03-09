@@ -48,7 +48,7 @@ namespace NancyHelloWorld.Model.Charts
 
         public virtual string GetUrl()
         {
-            return URL + "chl=" + data.Title + 
+            return URL + "chtt=" + data.Title + 
                          "&chs=" + width + "x" + height + 
                          "&chd=t:" + data.GenerateDataParameters() + 
                          "&chl=" + data.GenerateLabelParameters() + 
