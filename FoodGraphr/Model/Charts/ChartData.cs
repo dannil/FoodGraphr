@@ -10,42 +10,11 @@ namespace FoodGraphr.Model.Charts
     {
         private string title;
 
-        private float[] data;
+        private string[] data;
         private string[] labels;
         private string[] legends;
 
-        public string GenerateDataParameters()
-        {
-            string[] dataAsString = new string[data.Length];
-            for (int i = 0; i < data.Length; i++)
-            {
-                dataAsString[i] = data[i].ToString();
-                dataAsString[i] = dataAsString[i].Replace(",", ".");
-            }
-            return GenerateParameters(dataAsString, ",");
-        }
-
-        public string GenerateLabelParameters()
-        {
-            string[] dataAsString = new string[labels.Length];
-            for (int i = 0; i < labels.Length; i++)
-            {
-                dataAsString[i] = labels[i].ToString();
-            }
-            return GenerateParameters(dataAsString, "|");
-        }
-
-        public string GenerateLegendParameters()
-        {
-            string[] dataAsString = new string[labels.Length];
-            for (int i = 0; i < legends.Length; i++)
-            {
-                dataAsString[i] = legends[i].ToString();
-            }
-            return GenerateParameters(dataAsString, "|");
-        }
-
-        private string GenerateParameters(string[] data, string separator)
+        public string GenerateParameters(object[] data, string separator)
         {
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < data.Length; i++)
@@ -65,7 +34,7 @@ namespace FoodGraphr.Model.Charts
             set { title = value; }
         }
 
-        public float[] Data
+        public string[] Data
         {
             get { return data; }
             set { data = value; }

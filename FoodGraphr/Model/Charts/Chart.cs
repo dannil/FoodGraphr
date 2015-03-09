@@ -31,9 +31,15 @@ namespace FoodGraphr.Model.Charts
             data.Title = title;
         }
 
-        public void SetData(float[] datas)
+        public void SetData(float[] data)
         {
-            data.Data = datas;
+            string[] dataAsString = new string[data.Length];
+            for (int i = 0; i < data.Length; i++)
+            {
+                dataAsString[i] = data[i].ToString();
+                dataAsString[i] = dataAsString[i].Replace(",", ".");
+            }
+            this.data.Data = dataAsString;
         }
 
         public void SetLabels(string[] labels)
@@ -48,11 +54,26 @@ namespace FoodGraphr.Model.Charts
 
         public virtual string GetUrl()
         {
-            return URL + "chtt=" + data.Title + 
-                         "&chs=" + width + "x" + height + 
-                         "&chd=t:" + data.GenerateDataParameters() + 
-                         "&chl=" + data.GenerateLabelParameters() + 
-                         "&chdl=" + data.GenerateLegendParameters();
+            StringBuilder builder = new StringBuilder();
+            builder.Append(URL);
+            builder.Append("chs=" + width + "x" + height);
+            if (data.Title != null)
+            {
+                builder.Append("&chtt=" + data.Title);
+            }
+            if (data.Data != null)
+            {
+                builder.Append("&chd=t:" + data.GenerateParameters(data.Data, ","));
+            }
+            if (data.Labels != null)
+            {
+                builder.Append("&chl=" + data.GenerateParameters(data.Labels, "|"));
+            }
+            if (data.Legends != null)
+            {
+                builder.Append("&chdl=" + data.GenerateParameters(data.Legends, "|"));
+            }
+            return builder.ToString();
         }
 
     }
