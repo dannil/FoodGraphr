@@ -10,14 +10,14 @@ namespace FoodGraphr.Model.Charts
     {
         protected const string URL = "http://chart.apis.google.com/chart?";
 
-        protected ChartData data;
+        protected ChartData chartData;
 
         protected int width;
         protected int height;
 
         protected Chart()
         {
-            data = new ChartData();
+            chartData = new ChartData();
         }
 
         protected Chart(int width, int height) : this()
@@ -28,7 +28,7 @@ namespace FoodGraphr.Model.Charts
 
         public void SetTitle(string title)
         {
-            data.Title = title;
+            chartData.Title = title;
         }
 
         public void SetData(float[] data)
@@ -39,17 +39,17 @@ namespace FoodGraphr.Model.Charts
                 dataAsString[i] = data[i].ToString();
                 dataAsString[i] = dataAsString[i].Replace(",", ".");
             }
-            this.data.Data = dataAsString;
+            chartData.Data = dataAsString;
         }
 
         public void SetLabels(string[] labels)
         {
-            data.Labels = labels;
+            chartData.Labels = labels;
         }
 
         public void SetLegends(string[] legends)
         {
-            data.Legends = legends;
+            chartData.Legends = legends;
         }
 
         public virtual string GetUrl()
@@ -57,21 +57,21 @@ namespace FoodGraphr.Model.Charts
             StringBuilder builder = new StringBuilder();
             builder.Append(URL);
             builder.Append("chs=" + width + "x" + height);
-            if (data.Title != null)
+            if (chartData.Title != null)
             {
-                builder.Append("&chtt=" + data.Title);
+                builder.Append("&chtt=" + chartData.Title);
             }
-            if (data.Data != null)
+            if (chartData.Data != null)
             {
-                builder.Append("&chd=t:" + data.GenerateParameters(data.Data, ","));
+                builder.Append("&chd=t:" + chartData.GenerateParameters(chartData.Data, ","));
             }
-            if (data.Labels != null)
+            if (chartData.Labels != null)
             {
-                builder.Append("&chl=" + data.GenerateParameters(data.Labels, "|"));
+                builder.Append("&chl=" + chartData.GenerateParameters(chartData.Labels, "|"));
             }
-            if (data.Legends != null)
+            if (chartData.Legends != null)
             {
-                builder.Append("&chdl=" + data.GenerateParameters(data.Legends, "|"));
+                builder.Append("&chdl=" + chartData.GenerateParameters(chartData.Legends, "|"));
             }
             return builder.ToString();
         }
