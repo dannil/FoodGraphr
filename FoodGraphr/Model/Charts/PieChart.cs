@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace NancyHelloWorld.Model.Charts
+namespace FoodGraphr.Model.Charts
 {
     public class PieChart : Chart
     {

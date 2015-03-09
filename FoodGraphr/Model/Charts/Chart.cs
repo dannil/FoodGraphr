@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 
-namespace NancyHelloWorld.Model.Charts
+namespace FoodGraphr.Model.Charts
 {
     public abstract class Chart
     {

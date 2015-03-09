@@ -1,6 +1,6 @@
 ﻿using Nancy;
 
-namespace NancyHelloWorld
+namespace FoodGraphr
 {
     public class Bootstrapper : DefaultNancyBootstrapper
     {

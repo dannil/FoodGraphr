@@ -1,4 +1,4 @@
-﻿namespace NancyHelloWorld.Model
+﻿namespace FoodGraphr.Model
 {
     public class Nutrient
     {

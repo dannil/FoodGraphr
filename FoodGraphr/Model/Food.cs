@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NancyHelloWorld.Model
+namespace FoodGraphr.Model
 {
     public class Food
     {

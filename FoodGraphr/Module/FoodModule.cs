@@ -1,11 +1,11 @@
 ﻿using Nancy;
-using NancyHelloWorld.Model;
-using NancyHelloWorld.Model.Charts;
-using NancyHelloWorld.Utility;
+using FoodGraphr.Model;
+using FoodGraphr.Model.Charts;
+using FoodGraphr.Utility;
 using System.Collections.Generic;
 using System.Web;
 
-namespace NancyHelloWorld.Module
+namespace FoodGraphr.Module
 {
     public class FoodModule : NancyModule
     {
