@@ -6,17 +6,10 @@ namespace NancyHelloWorld.Model
     public class Food
     {
         private int number;
-        private String name;
+        private string name;
+        private Dictionary<String, float> nutrientValues;
 
-        private Dictionary<String, double> nutrientValues;
-
-        public Dictionary<String, double> NutrientValues
-        {
-            get { return nutrientValues; }
-            set { nutrientValues = value; }
-        }
-
-        public String Name
+        public string Name
         {
             get { return name; }
             set { name = value; }
@@ -26,6 +19,12 @@ namespace NancyHelloWorld.Model
         {
             get { return number; }
             set { number = value; }
+        }
+
+        public Dictionary<string, float> NutrientValues
+        {
+            get { return nutrientValues; }
+            set { nutrientValues = value; }
         }
 
     }
