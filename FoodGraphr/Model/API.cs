@@ -19,6 +19,14 @@ namespace FoodGraphr.Model
             this.client = new RestClient(this.url);
         }
 
+        public List<Food> GetFoods()
+        {
+            RestRequest request = new RestRequest("foodstuff", Method.GET);
+
+            RestResponse<List<Food>> response = (RestResponse<List<Food>>)this.client.Execute<List<Food>>(request);
+            return response.Data;
+        }
+
         public Food GetFood(int id)
         {
             RestRequest request = new RestRequest("foodstuff/{id}", Method.GET);
