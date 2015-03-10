@@ -14,16 +14,20 @@ namespace FoodGraphr.Model.Charts
         private string[] labels;
         private string[] legends;
 
-        public string GenerateParameters(object[] data, string separator)
+        public string GenerateParameters(object[] values, string separator)
         {
             StringBuilder builder = new StringBuilder();
+            
             for (int i = 0; i < data.Length; i++)
             {
-                builder.Append(data[i]);
-                if (i != data.Length - 1)
-                {
-                    builder.Append(separator);
-                }
+                if (data[i] != "0")
+                {                
+                    builder.Append(values[i]);
+                    if(i < values.Length-1 && data[i+1] != "0")
+                    {
+                        builder.Append(separator);
+                    }                        
+                }              
             }
             return builder.ToString();
         }
