@@ -68,19 +68,19 @@ namespace FoodGraphr.Model.Charts
             }
             if (chartData.Data != null)
             {
-                builder.Append("&chd=t:" + chartData.GenerateParameters(chartData.Data, ","));
+                builder.Append("&chd=t:" + chartData.GenerateParameters(chartData.Data, ','));
             }
             if (chartData.Labels != null)
             {
-                builder.Append("&chl=" + chartData.GenerateParameters(chartData.Labels, "|"));
+                builder.Append("&chl=" + chartData.GenerateParameters(chartData.Labels, '|'));
             }
             if (chartData.Legends != null)
             {
-                builder.Append("&chdl=" + chartData.GenerateParameters(chartData.Legends, "|"));
+                builder.Append("&chdl=" + chartData.GenerateParameters(chartData.Legends, '|'));
             }
             if (chartData.Colors != null)
             {
-                builder.Append("&chco=" + chartData.GenerateParameters(chartData.Colors, "|"));
+                builder.Append("&chco=" + chartData.GenerateParameters(chartData.Colors, '|'));
             }
             return builder.ToString();
         }
