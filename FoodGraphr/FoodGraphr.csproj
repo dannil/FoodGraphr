@@ -77,7 +77,7 @@
     <Compile Include="Model\Charts\ChartData.cs" />
     <Compile Include="Model\Charts\PieChart.cs" />
     <Compile Include="Model\Food.cs" />
-    <Compile Include="Module\FoodModule.cs" />
+    <Compile Include="Controller\FoodController.cs" />
     <Compile Include="Model\Nutrient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
