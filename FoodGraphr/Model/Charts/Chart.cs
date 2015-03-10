@@ -52,6 +52,11 @@ namespace FoodGraphr.Model.Charts
             chartData.Legends = legends;
         }
 
+        public void SetColors(string[] colors)
+        {
+            chartData.Colors = colors;
+        }
+
         public virtual string GetUrl()
         {
             StringBuilder builder = new StringBuilder();
@@ -72,6 +77,10 @@ namespace FoodGraphr.Model.Charts
             if (chartData.Legends != null)
             {
                 builder.Append("&chdl=" + chartData.GenerateParameters(chartData.Legends, "|"));
+            }
+            if (chartData.Colors != null)
+            {
+                builder.Append("&chco=" + chartData.GenerateParameters(chartData.Colors, "|"));
             }
             return builder.ToString();
         }

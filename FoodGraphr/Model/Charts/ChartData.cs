@@ -13,6 +13,7 @@ namespace FoodGraphr.Model.Charts
         private string[] data;
         private string[] labels;
         private string[] legends;
+        private string[] colors;
 
         public string GenerateParameters(object[] values, string separator)
         {
@@ -54,6 +55,12 @@ namespace FoodGraphr.Model.Charts
         {
             get { return legends; }
             set { legends = value; }
+        }
+
+        public string[] Colors
+        {
+            get { return colors; }
+            set { colors = value; }
         }
 
     }

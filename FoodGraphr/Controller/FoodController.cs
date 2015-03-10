@@ -70,6 +70,8 @@ namespace FoodGraphr.Controller
 
                 chart.SetLegends(new string[] { "Fat", "Protein", "Carbohydrates", "Fibres", "salt", "ash", "water", "alcohol" });
 
+                chart.SetColors(new string[] { "FF0000", "00FF00", "00FFFF", "AAFFFF", "AAAAFF", "AAAAAA", "BBBBBB", "FFAAAA" });
+
                 System.Diagnostics.Debug.WriteLine(chart.GetUrl());
 
                 return View["food", f];
