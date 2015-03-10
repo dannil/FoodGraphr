@@ -38,9 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GoogleChartSharp">
-      <HintPath>Libraries\GoogleChartSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.1.0.0\lib\net40\Nancy.dll</HintPath>
@@ -83,7 +80,6 @@
     <Compile Include="Module\FoodModule.cs" />
     <Compile Include="Model\Nutrient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\ChartGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -103,6 +99,9 @@
   <ItemGroup>
     <Folder Include="Content\Images\" />
     <Folder Include="Libraries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,7 +1,6 @@
 ﻿using Nancy;
 using FoodGraphr.Model;
 using FoodGraphr.Model.Charts;
-using FoodGraphr.Utility;
 using System.Collections.Generic;
 using System.Web;
 
@@ -62,8 +61,6 @@ namespace FoodGraphr.Module
                 chart.SetLegends(new string[] { "Fat", "Carbohydrates", "Fibres" });
 
                 System.Diagnostics.Debug.WriteLine(chart.GetUrl());
-
-                ChartGenerator.GenerateMassChart(f);
 
                 return View["food", f];
             };
