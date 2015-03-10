@@ -51,21 +51,29 @@ namespace FoodGraphr.Controller
 
                 chart.SetTitle(f.Name);
                 chart.SetData(new float[] { f.NutrientValues["fat"],
+                                            f.NutrientValues["protein"],
                                             f.NutrientValues["carbohydrates"],
-                                            f.NutrientValues["fibres"] });
+                                            f.NutrientValues["fibres"],                                             
+                                            f.NutrientValues["salt"],
+                                            f.NutrientValues["ash"],
+                                            f.NutrientValues["water"],
+                                            f.NutrientValues["alcohol"]});
 
                 chart.SetLabels(new string[] { f.NutrientValues["fat"].ToString() + " g",
+                                               f.NutrientValues["protein"].ToString() + " g",
                                                f.NutrientValues["carbohydrates"].ToString() + " g",
-                                               f.NutrientValues["fibres"].ToString() + " g" });
+                                               f.NutrientValues["fibres"].ToString() + " g",
+                                               f.NutrientValues["salt"].ToString() + " g",
+                                               f.NutrientValues["ash"].ToString() + " g",
+                                               f.NutrientValues["water"].ToString() + " g",
+                                               f.NutrientValues["alcohol"].ToString() + " g"});
 
-                chart.SetLegends(new string[] { "Fat", "Carbohydrates", "Fibres" });
+                chart.SetLegends(new string[] { "Fat", "Protein", "Carbohydrates", "Fibres", "salt", "ash", "water", "alcohol" });
 
                 System.Diagnostics.Debug.WriteLine(chart.GetUrl());
 
                 return View["food", f];
-            };
-
-            
+            };            
         }
     }
 }
