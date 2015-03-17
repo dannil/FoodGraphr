@@ -2,10 +2,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>FoodGraphr</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles/style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-    <h1>Name: @Model.Name</h1>
-    <img src = "@Model.Chart.GetUrl()"></img>
+    <div id="container">
+        <div id="header">
+            <h1>FoodGraphr</h1>
+        </div>
+        <div id="content">
+            <h1>@Model.Name</h1>
+            <img src="@Model.Chart.GetUrl()"/>
+        </div>
+    </div>
 </body>
 </html>

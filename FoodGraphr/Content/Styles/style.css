@@ -2,6 +2,12 @@
     font-family: 'Open Sans';
     background-color: #efeded;
 }
+input[type="text"] {
+    font-family: 'Open Sans';
+}
+button {
+    font-family: 'Open Sans';
+}
 
 #container {
     width: 60%;
@@ -12,6 +18,12 @@
 #header {
     display: inline;
     text-align: center;
+}
+
+#content {
+    border: 1px solid #000;
+    text-align: center;
+    background-color: #FFF;
 }
 
 #foods {

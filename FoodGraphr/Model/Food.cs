@@ -38,7 +38,6 @@ namespace FoodGraphr.Model
         {
             myChart = new Model.Charts.PieChart(540, 280);
 
-            myChart.SetTitle(name);
             myChart.SetData(new float[] { nutrientValues["fat"],
                                           nutrientValues["protein"],
                                           nutrientValues["carbohydrates"],
