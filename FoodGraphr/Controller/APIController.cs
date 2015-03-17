@@ -6,6 +6,7 @@ using Nancy;
 using FoodGraphr.Model;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace FoodGraphr.Controller
 {
@@ -22,7 +23,12 @@ namespace FoodGraphr.Controller
                 Food f = api.GetFood(parameters.id);
                 f.GeneratePieChart();
 
-                var response = (Response)JsonConvert.SerializeObject(f);
+                JsonSerializerSettings settings = new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                };
+
+                var response = (Response)JsonConvert.SerializeObject(f, settings);
                 response.ContentType = "application/json";
 
                 return response;
