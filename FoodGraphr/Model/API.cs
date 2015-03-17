@@ -49,5 +49,14 @@ namespace FoodGraphr.Model
             }
             return dictionary;
         }
+
+        public List<Food> SearchFood(string name)
+        {
+            RestRequest request = new RestRequest("foodstuff?query={name}", Method.GET);
+            request.AddUrlSegment("name", name.ToString());
+
+            RestResponse<List<Food>> response = (RestResponse<List<Food>>)this.client.Execute<List<Food>>(request);
+            return response.Data;
+        }
     }
 }
