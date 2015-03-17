@@ -1,20 +1,5 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<FoodGraphr.Model.Food>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>FoodGraphr</title>
-    <link rel="stylesheet" type="text/css" href="~/Content/Styles/style.css" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
-    <div id="container">
-        <div id="header">
-            <h1>FoodGraphr</h1>
-        </div>
-        <div id="content">
-            <h1>@Model.Name (100 g)</h1>
-            <img src="@Model.ChartUrl"/>
-        </div>
-    </div>
-</body>
-</html>
+<div id="content">
+    <h1>@Model.Name (100 g)</h1>
+    <img src="@Model.ChartUrl"/>
+</div>
