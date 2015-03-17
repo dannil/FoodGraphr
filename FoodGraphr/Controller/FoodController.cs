@@ -54,25 +54,25 @@ namespace FoodGraphr.Controller
                                             f.NutrientValues["protein"],
                                             f.NutrientValues["carbohydrates"],
                                             f.NutrientValues["fibres"],                                             
-                                            f.NutrientValues["salt"],
-                                            f.NutrientValues["ash"],
+                                            f.NutrientValues["salt"],                                            
                                             f.NutrientValues["water"],
+                                            f.NutrientValues["ash"],
                                             f.NutrientValues["alcohol"]});
 
                 chart.SetLabels(new string[] { f.NutrientValues["fat"].ToString() + " g",
                                                f.NutrientValues["protein"].ToString() + " g",
                                                f.NutrientValues["carbohydrates"].ToString() + " g",
                                                f.NutrientValues["fibres"].ToString() + " g",
-                                               f.NutrientValues["salt"].ToString() + " g",
-                                               f.NutrientValues["ash"].ToString() + " g",
+                                               f.NutrientValues["salt"].ToString() + " g",                                               
                                                f.NutrientValues["water"].ToString() + " g",
+                                               f.NutrientValues["ash"].ToString() + " g",
                                                f.NutrientValues["alcohol"].ToString() + " g"});
 
-                chart.SetLegends(new string[] { "Fat", "Protein", "Carbohydrates", "Fibres", "salt", "ash", "water", "alcohol" });
+                chart.SetLegends(new string[] { "Fat", "Protein", "Carbohydrates", "Fibres", "salt", "water", "ash", "alcohol" });
 
-                chart.SetColors(new string[] { "EBC30C", "D42000", "29E14E", "DDDDDD", "473E3F", "0F1C2E", "4D8DEB", "2D5187" });
+                chart.SetColors(new string[] { "717D8C", "DDDDDD", "BDB69C", "80CEB9", "7F858D", "41AAC4", "CCCC99", "2F343A" });
 
-                System.Diagnostics.Debug.WriteLine(chart.GetUrl());
+                System.Diagnostics.Debug.WriteLine(chart.GetUrl()); //7F858D -blågrön  
 
                 return View["food", f];
             };            
