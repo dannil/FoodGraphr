@@ -43,23 +43,23 @@ namespace FoodGraphr.Model
                                           nutrientValues["protein"],
                                           nutrientValues["carbohydrates"],
                                           nutrientValues["fibres"],                                             
-                                          nutrientValues["salt"],
-                                          nutrientValues["ash"],
+                                          nutrientValues["salt"],                                          
                                           nutrientValues["water"],
+                                          nutrientValues["ash"],
                                           nutrientValues["alcohol"]});
 
             myChart.SetLabels(new string[] { nutrientValues["fat"].ToString() + " g",
                                              nutrientValues["protein"].ToString() + " g",
                                              nutrientValues["carbohydrates"].ToString() + " g",
                                              nutrientValues["fibres"].ToString() + " g",
-                                             nutrientValues["salt"].ToString() + " g",
-                                             nutrientValues["ash"].ToString() + " g",
+                                             nutrientValues["salt"].ToString() + " g",                                             
                                              nutrientValues["water"].ToString() + " g",
+                                             nutrientValues["ash"].ToString() + " g",
                                              nutrientValues["alcohol"].ToString() + " g"});
 
-            myChart.SetLegends(new string[] { "Fat", "Protein", "Carbohydrates", "Fibres", "salt", "ash", "water", "alcohol" });
+            myChart.SetLegends(new string[] { "Fat", "Protein", "Carbohydrates", "Fibres", "Salt", "Water", "Ash", "Alcohol" });
 
-            myChart.SetColors(new string[] { "EBC30C", "D42000", "29E14E", "DDDDDD", "473E3F", "0F1C2E", "4D8DEB", "2D5187" });
+            myChart.SetColors(new string[] { "EBC30C", "D42000", "29E14E", "DDDDDD", "473E3F", "4D8DEB", "0F1C2E", "2D5187" });
         }
     }
 }
