@@ -1,0 +1,47 @@
+﻿body {
+    font-family: 'Open Sans';
+    background-color: #efeded;
+}
+
+#container {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#header {
+    display: inline;
+    text-align: center;
+}
+
+#foods {
+    padding-top: 40px;
+}
+
+#foods table {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#foods table tr {
+    background-color: #FFFFFF;
+}
+
+#foods table tr:hover {
+    background-color: #f1eded;
+}
+
+#foods table td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 1px solid #808080;
+}
+#foods table a {
+    color: #000;
+    text-decoration: none;
+}
+#foods table a:hover {
+    text-decoration: underline;
+}

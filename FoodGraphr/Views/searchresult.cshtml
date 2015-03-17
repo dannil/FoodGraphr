@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<List<FoodGraphr.Model.Food>>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>FoodGraphr</title>
@@ -13,6 +14,14 @@
                 <input type="text" name="name"/>
                 <button>Submit</button>
             </form>
+        </div>
+        <div id="foods">
+            <table>
+            @foreach (var food in @Model)
+            {
+                <tr><td><p><a href="food/@food.Number">@food.Name</a></p></td></tr>
+            }
+            </table>
         </div>
     </div>
 </body>

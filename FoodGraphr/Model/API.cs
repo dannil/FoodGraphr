@@ -19,14 +19,6 @@ namespace FoodGraphr.Model
             this.client = new RestClient(this.url);
         }
 
-        public List<Food> GetFoods()
-        {
-            RestRequest request = new RestRequest("foodstuff", Method.GET);
-
-            RestResponse<List<Food>> response = (RestResponse<List<Food>>)this.client.Execute<List<Food>>(request);
-            return response.Data;
-        }
-
         public Food GetFood(int id)
         {
             RestRequest request = new RestRequest("foodstuff/{id}", Method.GET);
@@ -35,6 +27,14 @@ namespace FoodGraphr.Model
             RestResponse<Food> response = (RestResponse<Food>)this.client.Execute<Food>(request);
             return response.Data;
         }
+
+        public List<Food> GetFoods()
+        {
+            RestRequest request = new RestRequest("foodstuff", Method.GET);
+
+            RestResponse<List<Food>> response = (RestResponse<List<Food>>)this.client.Execute<List<Food>>(request);
+            return response.Data;
+        }       
 
         public Dictionary<string, Nutrient> GetNutrients()
         {
@@ -50,13 +50,13 @@ namespace FoodGraphr.Model
             return dictionary;
         }
 
-        public Nutrient GetNutrient()
+        public List<Food> SearchFood(string name)
         {
-            RestRequest request = new RestRequest("nutrient", Method.GET);
+            RestRequest request = new RestRequest("foodstuff?query={name}", Method.GET);
+            request.AddUrlSegment("name", name.ToString());
 
-            RestResponse<Nutrient> response = (RestResponse<Nutrient>)this.client.Execute<Nutrient>(request);
+            RestResponse<List<Food>> response = (RestResponse<List<Food>>)this.client.Execute<List<Food>>(request);
             return response.Data;
         }
-
     }
 }

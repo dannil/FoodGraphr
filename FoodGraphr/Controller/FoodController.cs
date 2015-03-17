@@ -16,13 +16,6 @@ namespace FoodGraphr.Controller
 
             Dictionary<string, Nutrient> test = api.GetNutrients();
 
-            Get["/"] = parameters =>
-            {
-                Nutrient n = test["fat"];
-
-                return n.Unit;
-            };
-
             Get["/food/{id}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);

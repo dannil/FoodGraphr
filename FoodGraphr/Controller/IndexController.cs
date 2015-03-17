@@ -13,6 +13,8 @@ namespace FoodGraphr.Controller
 
         public IndexController()
         {
+            api = new API();
+
             Get["/"] = _ =>
             {
                 return View["index"];
@@ -20,12 +22,11 @@ namespace FoodGraphr.Controller
 
             Post["/"] = _ =>
             {
-                api = new API();
+                string name = Request.Form["name"];
 
-                int id = Request.Form["id"];
+                List<Food> foods = api.SearchFood(name);
 
-                Food f = api.GetFood(id);
-                return View["food", f];
+                return View["searchresult", foods];
             };
         }
     }
