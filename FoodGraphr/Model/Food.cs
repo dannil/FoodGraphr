@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using FoodGraphr.Model;
+using FoodGraphr.Model.Charts;
 
 namespace FoodGraphr.Model
 {
@@ -7,7 +10,7 @@ namespace FoodGraphr.Model
     {
         private int number;
         private string name;
-        private Charts.Chart myChart;
+        private string chartUrl;
         private Dictionary<String, float> nutrientValues;
 
         public string Name
@@ -22,10 +25,10 @@ namespace FoodGraphr.Model
             set { number = value; }
         }
 
-        public Charts.Chart Chart
+        public string ChartUrl
         {
-            get { return myChart; }
-            set { myChart = value; }
+            get { return chartUrl; }
+            set { chartUrl = value; }
         }
 
         public Dictionary<string, float> NutrientValues
@@ -34,9 +37,9 @@ namespace FoodGraphr.Model
             set { nutrientValues = value; }
         }
 
-        public void GeneratePieChart()
+        public PieChart GeneratePieChart()
         {
-            myChart = new Model.Charts.PieChart(540, 280);
+            PieChart myChart = new Model.Charts.PieChart(540, 280);
 
             myChart.SetData(new float[] { nutrientValues["fat"],
                                           nutrientValues["protein"],
@@ -66,6 +69,10 @@ namespace FoodGraphr.Model
                                               "Alcohol (" + nutrientValues["alcohol"] + " g)"});
 
             myChart.SetColors(new string[] { "EBC30C", "D42000", "29E14E", "DDDDDD", "473E3F", "4D8DEB", "0F1C2E", "2D5187" });
+
+            chartUrl = myChart.GetUrl();
+
+            return myChart;
         }
     }
 }

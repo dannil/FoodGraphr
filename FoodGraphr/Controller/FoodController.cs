@@ -42,7 +42,7 @@ namespace FoodGraphr.Controller
 
                 f.GeneratePieChart();
 
-                System.Diagnostics.Debug.WriteLine(f.Chart.GetUrl());
+                System.Diagnostics.Debug.WriteLine(f.ChartUrl);
 
                 return View["food", f];
             };            
