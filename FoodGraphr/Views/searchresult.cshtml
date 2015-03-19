@@ -1,28 +1,15 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<List<FoodGraphr.Model.Food>>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>FoodGraphr</title>
-    <link rel="stylesheet" type="text/css" href="~/Content/Styles/style.css" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
-    <div id="container">
-        <div id="header">
-            <h1>FoodGraphr</h1>
-            <form method="post" action="/">
-                <input type="text" name="name"/>
-                <button>Submit</button>
-            </form>
-        </div>
-        <div id="foods">
-            <table>
-            @foreach (var food in @Model)
-            {
-                <tr><td><p><a href="food/@food.Number">@food.Name</a></p></td></tr>
-            }
-            </table>
-        </div>
-    </div>
-</body>
-</html>
+<div id="searchbox">
+    <form method="post" action="/">
+        <input type="text" name="name"/>
+        <button>Submit</button>
+    </form>
+</div>
+<div id="foods">
+    <table>
+    @foreach (var food in @Model)
+    {
+        <tr><td><p><a href="food/@food.Number">@food.Name</a></p></td></tr>
+    }
+    </table>
+</div>

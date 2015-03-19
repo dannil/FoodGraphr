@@ -11,7 +11,7 @@ body {
     margin-right: 15%;
 }
 
-#header {
+#header, #searchbox {
     display: inline;
     text-align: center;
 }
@@ -40,10 +40,7 @@ body {
 }
 
 #foods table td {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0px 10px 0px 10px;
     border: 1px solid #808080;
 }
 #foods table a {

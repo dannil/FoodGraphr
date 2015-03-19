@@ -1,0 +1,17 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>FoodGraphr</title>
+        <link rel="stylesheet" type="text/css" href="~/Content/Styles/style.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <div id="header">
+            <h1>FoodGraphr</h1>
+        </div>
+        <div id="container">
+            @RenderBody()
+        </div>
+    </body>
+</html>
