@@ -11,6 +11,10 @@ body {
     margin-right: 15%;
 }
 
+#searchbox form {
+    margin-bottom: 30px;
+}
+
 #header, #searchbox {
     display: inline;
     text-align: center;
@@ -23,7 +27,6 @@ body {
 }
 
 #foods {
-    padding-top: 40px;
 }
 
 #foods table {

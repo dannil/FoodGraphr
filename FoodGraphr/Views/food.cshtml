@@ -1,4 +1,10 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<FoodGraphr.Model.Food>
+<div id="searchbox">
+    <form method="post" action="/">
+        <input type="text" name="name"/>
+        <button>Submit</button>
+    </form>
+</div>
 <div id="content">
     <h1>@Model.Name (100 g)</h1>
     <img src="@Model.ChartUrl"/>
