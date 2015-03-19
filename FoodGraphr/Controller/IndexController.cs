@@ -25,8 +25,8 @@ namespace FoodGraphr.Controller
                 string name = Request.Form["name"];
 
                 List<Food> foods = api.SearchFood(name);
-                List<Food> sortedFoods = foods.OrderByDescending(f => f.Name.IndexOf(name.First().ToString().ToUpper() + name.Substring(1) + " "))
-                                              .ThenByDescending(f => f.Name.IndexOf(name.First().ToString().ToUpper() + name.Substring(1)))
+                List<Food> sortedFoods = foods.OrderByDescending(f => f.Name.IndexOf(name.First().ToString().ToUpper() + name.Substring(1)))
+                                              .ThenByDescending(f => f.Name.IndexOf(name.First().ToString().ToUpper() + name.Substring(1) + " "))
                                               .ThenBy(f => f.Name.Split(' ').Count())
                                               .ToList();
 
