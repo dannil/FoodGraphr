@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Controller\APIController.cs" />
     <Compile Include="Controller\IndexController.cs" />
+    <Compile Include="Handler\ErrorHandler.cs" />
     <Compile Include="Model\API.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Model\Charts\Chart.cs" />
