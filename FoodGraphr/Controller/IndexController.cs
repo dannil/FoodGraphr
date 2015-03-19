@@ -27,7 +27,7 @@ namespace FoodGraphr.Controller
                 List<Food> foods = api.SearchFood(name);
 
                 List<Food> sortedFoods = new List<Food>();
-                if (name != null)
+                if (name != string.Empty)
                 {
                     // Sort the list by the input
                     sortedFoods = foods.OrderByDescending(f => f.Name.IndexOf(name.First().ToString().ToUpper() + name.Substring(1)))
