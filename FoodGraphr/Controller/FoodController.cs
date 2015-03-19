@@ -19,6 +19,11 @@ namespace FoodGraphr.Controller
             Get["/food/{id}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
+                if (f.Name == null)
+                {
+                    return View["Error/404"];
+                }
+
                 double total = 0;
                 foreach (KeyValuePair<string, float> pair in f.NutrientValues)
                 {
