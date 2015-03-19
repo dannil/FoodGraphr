@@ -10,19 +10,20 @@ namespace FoodGraphr.Controller
     {
         private API api;
 
-        public FoodController()
+        public FoodController() : base("/food")
         {
             this.api = new API();
 
             Dictionary<string, Nutrient> test = api.GetNutrients();
 
-            Get["/food/{id}"] = parameters =>
+            Get["/{id}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
                 if (f.Name == null)
                 {
                     return View["Error/404"];
                 }
+                f.GeneratePieChart();
                 return View["food", f];
             };            
         }

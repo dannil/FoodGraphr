@@ -14,11 +14,11 @@ namespace FoodGraphr.Controller
     {
         private API api;
 
-        public APIController()
+        public APIController() : base("/api")
         {
             api = new API();
 
-            Get["/api/food/{id}"] = parameters =>
+            Get["/food/{id}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
                 f.GeneratePieChart();
