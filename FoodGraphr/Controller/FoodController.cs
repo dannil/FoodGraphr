@@ -3,6 +3,7 @@ using FoodGraphr.Model;
 using FoodGraphr.Model.Charts;
 using System.Collections.Generic;
 using System.Web;
+using FoodGraphr.Model.API;
 
 namespace FoodGraphr.Controller
 {
