@@ -59,14 +59,14 @@ namespace FoodGraphr.Model
                                              nutrientValues["ash"].ToString() + " g",
                                              nutrientValues["alcohol"].ToString() + " g"});
 
-            myChart.SetLegends(new string[] { "Fat (" + nutrientValues["fat"] + " g)",
+            myChart.SetLegends(new string[] { "Fett (" + nutrientValues["fat"] + " g)",
                                               "Protein (" + nutrientValues["protein"] + " g)",
-                                              "Carbohydrates (" + nutrientValues["carbohydrates"] + " g)", 
-                                              "Fibres (" + nutrientValues["fibres"] + " g)", 
+                                              "Kolhydrater (" + nutrientValues["carbohydrates"] + " g)", 
+                                              "Fibrer (" + nutrientValues["fibres"] + " g)", 
                                               "Salt (" + nutrientValues["salt"] + " g)", 
-                                              "Water (" + nutrientValues["water"] + " g)", 
-                                              "Ash (" + nutrientValues["ash"] + " g)", 
-                                              "Alcohol (" + nutrientValues["alcohol"] + " g)"});
+                                              "Vatten (" + nutrientValues["water"] + " g)", 
+                                              "Aska (" + nutrientValues["ash"] + " g)", 
+                                              "Alkohol (" + nutrientValues["alcohol"] + " g)"});
 
             myChart.SetColors(new string[] { "EBC30C", "D42000", "29E14E", "DDDDDD", "473E3F", "4D8DEB", "0F1C2E", "2D5187" });
 
