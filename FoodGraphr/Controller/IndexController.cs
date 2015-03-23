@@ -1,4 +1,5 @@
 ﻿using FoodGraphr.Model;
+using FoodGraphr.Model.API;
 using Nancy;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,11 @@ namespace FoodGraphr.Controller
 {
     public class IndexController : NancyModule
     {
-        private API api;
+        private MatAPI api;
 
         public IndexController()
         {
-            api = new API();
+            api = new MatAPI();
 
             Get["/"] = _ =>
             {

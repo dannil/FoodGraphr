@@ -79,7 +79,8 @@
     <Compile Include="Controller\APIController.cs" />
     <Compile Include="Controller\IndexController.cs" />
     <Compile Include="Handler\ErrorHandler.cs" />
-    <Compile Include="Model\API.cs" />
+    <Compile Include="Model\API\FoodGraphrAPI.cs" />
+    <Compile Include="Model\API\MatAPI.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Model\Charts\Chart.cs" />
     <Compile Include="Model\Charts\ChartData.cs" />

@@ -7,16 +7,17 @@ using FoodGraphr.Model;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using FoodGraphr.Model.API;
 
 namespace FoodGraphr.Controller
 {
     public class APIController : NancyModule
     {
-        private API api;
+        private MatAPI api;
 
         public APIController() : base("/api")
         {
-            api = new API();
+            api = new MatAPI();
 
             Get["/food/{id}"] = parameters =>
             {

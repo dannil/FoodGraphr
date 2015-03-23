@@ -8,11 +8,11 @@ namespace FoodGraphr.Controller
 {
     public class FoodController : NancyModule
     {
-        private API api;
+        private MatAPI api;
 
         public FoodController() : base("/food")
         {
-            this.api = new API();
+            this.api = new MatAPI();
 
             Dictionary<string, Nutrient> test = api.GetNutrients();
 

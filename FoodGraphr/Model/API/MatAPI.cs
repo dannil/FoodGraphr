@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FoodGraphr.Model
+namespace FoodGraphr.Model.API
 {
-    public class API
+    public class MatAPI
     {
         private String url;
 
         private RestClient client;
 
-        public API()
+        public MatAPI()
         {
             this.url = "http://www.matapi.se";
 
