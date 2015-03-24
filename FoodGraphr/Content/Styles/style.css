@@ -1,5 +1,6 @@
 ﻿body, input[type="text"], button {
     font-family: Candara;
+    font-size: 18px;
 }
 body {
     background-color: #efeded;
