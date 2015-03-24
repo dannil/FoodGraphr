@@ -68,7 +68,7 @@ namespace FoodGraphr.Model
                                               "Aska (" + nutrientValues["ash"] + " g)", 
                                               "Alkohol (" + nutrientValues["alcohol"] + " g)"});
 
-            myChart.SetColors(new string[] { "EBC30C", "D42000", "29E14E", "DDDDDD", "473E3F", "4D8DEB", "0F1C2E", "2D5187" });
+            myChart.SetColors(new string[] { "EBC30C", "D42000", "29E14E", "DDDDDD", "E9AEAA", "4D8DEB", "0F1C2E", "2D5187" });
 
             chartUrl = myChart.GetUrl();
 
