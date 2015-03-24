@@ -27,10 +27,19 @@ body {
     background-color: #FFF;
     padding: 20px;
 }
-#content p {
+
+#documentation {
+    border: 1px solid #000;
+    background-color: #FFF;
+    padding: 20px;
+}
+
+#content p, documentation p {
     margin: 0 0 6px 0;
     padding: 0;
 }
+
+
 
 #foods {
 }

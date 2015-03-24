@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\APIController.cs" />
+    <Compile Include="Controller\DocumentationController.cs" />
     <Compile Include="Controller\IndexController.cs" />
     <Compile Include="Handler\ErrorHandler.cs" />
     <Compile Include="JsonUtility.cs" />
@@ -104,6 +105,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Error\500.cshtml" />
+    <Content Include="Views\documentation.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
