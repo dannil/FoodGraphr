@@ -29,18 +29,18 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
-            Get["/food/{id}"] = parameters =>
+            Get["/food/{id:int}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
                 f.GeneratePieChart();
 
-                var response = (Response)JsonUtility.ConvertToJson(f);
-                response.ContentType = "application/json";
+                var goodResponse = (Response)JsonUtility.ConvertToJson(f);
+                goodResponse.ContentType = "application/json";
 
-                return response;
+                return goodResponse;
             };
 
-            Get["/food/{id}/chart"] = parameters =>
+            Get["/food/{id:int}/chart"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
                 f.GeneratePieChart();
@@ -51,7 +51,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
-            Get["/food/{id}/nutrients"] = parameters =>
+            Get["/food/{id:int}/nutrients"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
                 f.GeneratePieChart();
@@ -62,7 +62,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
-            Get["/food/{id}/nutrient/{nutrient}"] = parameters =>
+            Get["/food/{id:int}/nutrient/{nutrient:string}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
 
