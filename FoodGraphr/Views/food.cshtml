@@ -9,6 +9,6 @@
     <h1>@Model.Name (100 g)</h1>
     <img src="@Model.ChartUrl"/>
     <h2>Kalorier: @Model.NutrientValues["energyKcal"] kcal</h2>
-    <p>@((@Model.NutrientValues["energyKcal"] / 2675) * 100)% rekommenderat dagligt kaloriintag för män</p>
-    <p>@((@Model.NutrientValues["energyKcal"] / 2150) * 100)% rekommenderat dagligt kaloriintag för kvinnor</p>
+    <p>@(Math.Round(@Model.NutrientValues["energyKcal"] / 2675 * 100, 2))% rekommenderat dagligt kaloriintag för män</p>
+    <p>@(Math.Round(@Model.NutrientValues["energyKcal"] / 2150 * 100, 2))% rekommenderat dagligt kaloriintag för kvinnor</p>
 </div>
