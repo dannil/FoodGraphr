@@ -32,6 +32,15 @@ namespace FoodGraphr.Controller
             Get["/food/{id:int}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
+                if (f.Name == null)
+                {
+                    var badResponse = JsonUtility.DoResponse(Request.Path,
+                                                             HttpStatusCode.BadRequest,
+                                                             HttpStatusCode.BadRequest.ToString() + ", a food with that id doesn't exist");
+                    badResponse.ContentType = "application/json; charset=utf-8";
+                    return badResponse;
+                }
+
                 f.GeneratePieChart();
 
                 var response = (Response)JsonUtility.ConvertToJson(f);
@@ -43,6 +52,15 @@ namespace FoodGraphr.Controller
             Get["/food/{id:int}/chart"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
+                if (f.Name == null)
+                {
+                    var badResponse = JsonUtility.DoResponse(Request.Path,
+                                                             HttpStatusCode.BadRequest,
+                                                             HttpStatusCode.BadRequest.ToString() + ", a food with that id doesn't exist");
+                    badResponse.ContentType = "application/json; charset=utf-8";
+                    return badResponse;
+                }
+
                 f.GeneratePieChart();
 
                 var response = (Response)JsonUtility.ConvertToJson(f.ChartUrl);
@@ -54,6 +72,15 @@ namespace FoodGraphr.Controller
             Get["/food/{id:int}/nutrients"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
+                if (f.Name == null)
+                {
+                    var badResponse = JsonUtility.DoResponse(Request.Path,
+                                                             HttpStatusCode.BadRequest,
+                                                             HttpStatusCode.BadRequest.ToString() + ", a food with that id doesn't exist");
+                    badResponse.ContentType = "application/json; charset=utf-8";
+                    return badResponse;
+                }
+
                 f.GeneratePieChart();
 
                 var response = (Response)JsonUtility.ConvertToJson(f.NutrientValues);
@@ -65,6 +92,23 @@ namespace FoodGraphr.Controller
             Get["/food/{id:int}/nutrient/{nutrient}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
+                if (f.Name == null)
+                {
+                    var badResponse = JsonUtility.DoResponse(Request.Path,
+                                                             HttpStatusCode.BadRequest,
+                                                             HttpStatusCode.BadRequest.ToString() + ", a food with that id doesn't exist");
+                    badResponse.ContentType = "application/json; charset=utf-8";
+                    return badResponse;
+                }
+
+                if (!f.NutrientValues.ContainsKey(parameters.nutrient))
+                {
+                    var badResponse = JsonUtility.DoResponse(Request.Path,
+                                                             HttpStatusCode.BadRequest,
+                                                             HttpStatusCode.BadRequest.ToString() + ", a nutrient with that name doesn't exist");
+                    badResponse.ContentType = "application/json; charset=utf-8";
+                    return badResponse;
+                }
 
                 float n = f.NutrientValues[parameters.nutrient];
 
