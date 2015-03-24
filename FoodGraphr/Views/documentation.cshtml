@@ -107,25 +107,389 @@
         "zink": 1.5
     }
 }
-    </pre>      
-
+    </pre>
     <h1>GET /food/{id}/nutrients</h1>
     <p>Hämtar alla näringsvärden för ett livsmedel.</p>
     <p><b>Exempel: </b>GET /food/1885/nutrients</p>
-    <!--BILD HÄR-->
-
+    <pre>
+{
+    "energyKj": 1923,
+    "energyKcal": 460,
+    "protein": 9.9,
+    "fat": 23,
+    "carbohydrates": 51.5,
+    "fibres": 3.5,
+    "salt": 0.1,
+    "ash": 1.3,
+    "water": 10.8,
+    "alcohol": 0,
+    "monosaccharides": 0.4,
+    "disaccharides": 50,
+    "saccharose": 49,
+    "wholegrain": 0,
+    "saturatedFattyAcids": 1.8,
+    "fattyAcid40100": 0,
+    "fattyAcid120": 0,
+    "fattyAcid140": 0,
+    "fattyAcid160": 1.4,
+    "fattyAcid180": 0.4,
+    "fattyAcid200": 0,
+    "monounsaturatedFattyAcids": 15.4,
+    "fattyAcid161": 0.1,
+    "fattyAcid181": 15.3,
+    "sumPolyunsaturatedFattyAcids": 4.9,
+    "fattyAcid182": 4.9,
+    "fattyAcid204": 0,
+    "fattyAcid183": 0,
+    "epa": 0,
+    "dpa": 0,
+    "dha": 0,
+    "transFattyAcids": 0,
+    "cholesterol": 0,
+    "retinolEquivalents": 13,
+    "retinol": 12,
+    "betacarotene": 6,
+    "vitaminD": 0,
+    "vitaminE": 12,
+    "thiamine": 0.11,
+    "riboflavin": 0.35,
+    "vitaminC": 0,
+    "niacin": 1.6,
+    "niacinEquivalents": 3.3,
+    "vitaminB6": 0.06,
+    "vitaminB12": 0,
+    "phosphorous": 240,
+    "folate": 45,
+    "trash": 0,
+    "iron": 1.9,
+    "calcium": 59,
+    "potassium": 270,
+    "magnesium": 140,
+    "sodium": 33,
+    "selenium": 1,
+    "zink": 1.5
+}
+    </pre>
     <h1>GET /food/{id}/nutrient/{nutrient}</h1>
     <p>Hämtar värdet av ett specificerat näringsämne för ett livsmedel.</p>
     <p><b>Exempel: </b>GET /food/1885/nutrient/protein</p>
-    <!--BILD HÄR-->
-
+    <pre>
+9.9
+    </pre>
     <h1>GET /food/{id}/chart</h1>
     <p>Hämtar länken till bilden för grafen som representerar mängden av de olika näringsvärdena i ett livsmedel.</p>
     <p><b>Exempel: </b>GET /food/1885/chart</p>
-    <!--BILD HÄR-->
-
+    <pre>
+http://chart.apis.google.com/chart?chs=540x280&chd=t:23,9.9,51.5,3.5,0.1,10.8,1.3&chl=23%20g|9,9%20g|51,5
+%20g|3,5%20g|0,1%20g|10,8%20g|1,3%20g&chdl=Fett%20(23%20g)|Protein%20(9,9%20g)|Kolhydrater%20(51,5%20g)|F
+ibrer%20(3,5%20g)|Salt%20(0,1%20g)|Vatten%20(10,8%20g)|Aska%20(1,3%20g)&chco=EBC30C|D42000|29E14E|DDDDDD|
+473E3F|4D8DEB|0F1C2E&cht=p"
+    </pre>
     <h1>GET /nutrients</h1>
     <p>Hämtar namn och enhet av alla näringsvärden.</p>
     <p><b>Exempel: </b>GET /nutrients</p>
-    <!--BILD HÄR-->
+    <pre>
+[
+	{
+		"slug": "alcohol",
+		"name": "Alcohol",
+		"unit": "g"
+	},
+	{
+		"slug": "ash",
+		"name": "Ash",
+		"unit": "g"
+	},
+	{
+		"slug": "betacarotene",
+		"name": "Betacarotene",
+		"unit": "ug"
+	},
+	{
+		"slug": "calcium",
+		"name": "Calcium",
+		"unit": "mg"
+	},
+	{
+		"slug": "carbohydrates",
+		"name": "Carbohydrates",
+		"unit": "g"
+	},
+	{
+		"slug": "cholesterol",
+		"name": "Cholesterol",
+		"unit": "mg"
+	},
+	{
+		"slug": "dha",
+		"name": "DHA (fatty acid 22:6)",
+		"unit": "g"
+	},
+	{
+		"slug": "disaccharides",
+		"name": "Disaccharides",
+		"unit": "g"
+	},
+	{
+		"slug": "dpa",
+		"name": "DPA (fatty acid 22:5)",
+		"unit": "g"
+	},
+	{
+		"slug": "energyKcal",
+		"name": "Energy kCal",
+		"unit": "kcal"
+	},
+	{
+		"slug": "energyKj",
+		"name": "Energy kJ",
+		"unit": "kj"
+	},
+	{
+		"slug": "epa",
+		"name": "EPA (fatty acid 20:5)",
+		"unit": "g"
+	},
+	{
+		"slug": "fat",
+		"name": "Fat",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid120",
+		"name": "Fatty acid 12:0",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid140",
+		"name": "Fatty acid 14:0",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid160",
+		"name": "Fatty acid 16:0",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid161",
+		"name": "Fatty acid 16:1",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid180",
+		"name": "Fatty acid 18:0",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid181",
+		"name": "Fatty acid 18:1",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid182",
+		"name": "Fatty acid 18:2",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid183",
+		"name": "Fatty acid 18:3",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid200",
+		"name": "Fatty acid 20:0",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid204",
+		"name": "Fatty acid 20:4",
+		"unit": "g"
+	},
+	{
+		"slug": "fattyAcid40100",
+		"name": "Fatty acid 4:0-10:0",
+		"unit": "g"
+	},
+	{
+		"slug": "fibres",
+		"name": "Fibres",
+		"unit": "g"
+	},
+	{
+		"slug": "folate",
+		"name": "Folate",
+		"unit": "ug"
+	},
+	{
+		"slug": "iodine",
+		"name": "Iodine",
+		"unit": "ug"
+	},
+	{
+		"slug": "iron",
+		"name": "Iron",
+		"unit": "mg"
+	},
+	{
+		"slug": "longN3FattyAcids",
+		"name": "Sum long n-3 fatty acids",
+		"unit": "g"
+	},
+	{
+		"slug": "magnesium",
+		"name": "Magnesium",
+		"unit": "mg"
+	},
+	{
+		"slug": "monosaccharides",
+		"name": "Monosaccharides",
+		"unit": "g"
+	},
+	{
+		"slug": "monounsaturatedFattyAcids",
+		"name": "Sum monounsaturated fatty acids",
+		"unit": "g"
+	},
+	{
+		"slug": "n3FattyAcids",
+		"name": "Sum n-3 fatty acids",
+		"unit": "g"
+	},
+	{
+		"slug": "n6FattyAcids",
+		"name": "Sum n-6 fatty acids",
+		"unit": "g"
+	},
+	{
+		"slug": "niacin",
+		"name": "Niacin",
+		"unit": "mg"
+	},
+	{
+		"slug": "niacinEquivalents",
+		"name": "Niacin equivalents",
+		"unit": ""
+	},
+	{
+		"slug": "phosphorous",
+		"name": "Phosphorous",
+		"unit": "mg"
+	},
+	{
+		"slug": "potassium",
+		"name": "Potassium",
+		"unit": "mg"
+	},
+	{
+		"slug": "protein",
+		"name": "Protein",
+		"unit": "g"
+	},
+	{
+		"slug": "retinol",
+		"name": "Retinol",
+		"unit": "ug"
+	},
+	{
+		"slug": "retinolEquivalents",
+		"name": "Retinol equivalents",
+		"unit": ""
+	},
+	{
+		"slug": "riboflavin",
+		"name": "Riboflavin",
+		"unit": "mg"
+	},
+	{
+		"slug": "saccharose",
+		"name": "Saccharose",
+		"unit": "g"
+	},
+	{
+		"slug": "salt",
+		"name": "Salt",
+		"unit": "g"
+	},
+	{
+		"slug": "saturatedFattyAcids",
+		"name": "Sum saturated fatty acids",
+		"unit": "g"
+	},
+	{
+		"slug": "selenium",
+		"name": "Selenium",
+		"unit": "ug"
+	},
+	{
+		"slug": "sodium",
+		"name": "Sodium",
+		"unit": "mg"
+	},
+	{
+		"slug": "sumPolyunsaturatedFattyAcids",
+		"name": "Sum polyunsaturated fatty acids",
+		"unit": "g"
+	},
+	{
+		"slug": "thiamine",
+		"name": "Thiamine",
+		"unit": "mg"
+	},
+	{
+		"slug": "transFattyAcids",
+		"name": "Sum trans fatty acids",
+		"unit": "g"
+	},
+	{
+		"slug": "trash",
+		"name": "trash",
+		"unit": "percentage"
+	},
+	{
+		"slug": "vitaminB12",
+		"name": "Vitamin B12",
+		"unit": "ug"
+	},
+	{
+		"slug": "vitaminB6",
+		"name": "Vitamin B6",
+		"unit": "mg"
+	},
+	{
+		"slug": "vitaminC",
+		"name": "Vitamin C",
+		"unit": "mg"
+	},
+	{
+		"slug": "vitaminD",
+		"name": "Vitamin D",
+		"unit": "ug"
+	},
+	{
+		"slug": "vitaminE",
+		"name": "Vitamin E",
+		"unit": "mg"
+	},
+	{
+		"slug": "vitaminK",
+		"name": "Vitamin K",
+		"unit": "ug"
+	},
+	{
+		"slug": "water",
+		"name": "Water",
+		"unit": "g"
+	},
+	{
+		"slug": "wholegrain",
+		"name": "Wholegrain sum",
+		"unit": "g"
+	},
+	{
+		"slug": "zink",
+		"name": "Zink",
+		"unit": "mg"
+	}
+]
+    </pre>
 </div>
