@@ -5,7 +5,13 @@ input[type="text"], button {
     font-size: 18px;
 }
 body {
-    background-color: #efeded;
+    background-image: url("../Images/burger-tilted.png");
+    background-repeat: repeat;
+    /*background-color: #efeded;*/
+}
+
+#container, #searchbox, #error, #content, #documentation, #header, #foods {
+    opacity: 0.98;
 }
 
 #container {

@@ -72,6 +72,7 @@
     <EmbeddedResource Include="Content\Images\icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="Content\Images\burger-tilted.png" />
     <Content Include="Content\Styles\style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
