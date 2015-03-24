@@ -24,12 +24,29 @@ namespace FoodGraphr.Controller
                 Food f = api.GetFood(parameters.id);
                 f.GeneratePieChart();
 
-                JsonSerializerSettings settings = new JsonSerializerSettings
-                {
-                    ContractResolver = new CamelCasePropertyNamesContractResolver()
-                };
+                var response = (Response)JsonUtility.ConvertToJson(f);
+                response.ContentType = "application/json";
 
-                var response = (Response)JsonConvert.SerializeObject(f, settings);
+                return response;
+            };
+
+            Get["/food/{id}/chart"] = parameters =>
+            {
+                Food f = api.GetFood(parameters.id);
+                f.GeneratePieChart();
+
+                var response = (Response)JsonUtility.ConvertToJson(f.ChartUrl);
+                response.ContentType = "application/json";
+
+                return response;
+            };
+
+            Get["/food/{id}/nutrients"] = parameters =>
+            {
+                Food f = api.GetFood(parameters.id);
+                f.GeneratePieChart();
+
+                var response = (Response)JsonUtility.ConvertToJson(f.NutrientValues);
                 response.ContentType = "application/json";
 
                 return response;
