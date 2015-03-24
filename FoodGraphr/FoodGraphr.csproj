@@ -83,7 +83,7 @@
     <Compile Include="Controller\DocumentationController.cs" />
     <Compile Include="Controller\IndexController.cs" />
     <Compile Include="Handler\ErrorHandler.cs" />
-    <Compile Include="JsonUtility.cs" />
+    <Compile Include="Utility\JsonUtility.cs" />
     <Compile Include="Model\API\FoodGraphrAPI.cs" />
     <Compile Include="Model\API\MatAPI.cs" />
     <Compile Include="Bootstrapper.cs" />

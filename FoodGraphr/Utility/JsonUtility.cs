@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FoodGraphr
+namespace FoodGraphr.Utility
 {
     public class JsonUtility
     {
