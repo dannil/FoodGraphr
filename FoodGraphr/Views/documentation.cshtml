@@ -1,0 +1,64 @@
+﻿<div id="searchbox">
+    <form method="post" action="/">
+        <input type="text" name="name"/>
+        <button>Submit</button>
+    </form>
+</div>
+<div id="documentation">
+    <h1>Metoder</h1>
+    <ul>
+        <li>GET /food</li>
+        <li>GET /food/{id}</li>
+        <li>GET /food/{id}/nutrients</li>
+        <li>GET /food/{id}/nutrient/{nutrient}</li>
+        <li>GET /food/{id}/chart</li>
+        <li>GET /nutrients</li>
+    </ul>
+
+    <h1>GET /food</h1>
+    <p>Hämtar namn och id på alla livsmedel.</p>
+    <p><b>Exempel: </b>GET /food</p> 
+    <pre>
+    [
+        {
+            name: "Talg nöt",
+            number: 1
+        },
+        {
+            name: "Späck gris",
+            number: 2
+        },
+        {
+            name: "Ister gris",
+            number: 3
+        },
+        etc…
+    ]
+    </pre>
+    <!--BILD HÄR-->
+
+    <h1>GET /food/{id}</h1>
+    <p>Hämtar namn, näringsvärden och en länk till en bild av en graf som representerar mängden av de olika näringsvärdena i ett livsmedel.</p>
+    <p><b>Exempel: </b>GET /food/1885</p>
+    <!--BILD HÄR-->      
+
+    <h1>GET /food/{id}/nutrients</h1>
+    <p>Hämtar alla näringsvärden för ett livsmedel.</p>
+    <p><b>Exempel: </b>GET /food/1885/nutrients</p>
+    <!--BILD HÄR-->
+
+    <h1>GET /food/{id}/nutrient/{nutrient}</h1>
+    <p>Hämtar värdet av ett specificerat näringsämne för ett livsmedel.</p>
+    <p><b>Exempel: </b>GET /food/1885/nutrient/protein</p>
+    <!--BILD HÄR-->
+
+    <h1>GET /food/{id}/chart</h1>
+    <p>Hämtar länken till bilden för grafen som representerar mängden av de olika näringsvärdena i ett livsmedel.</p>
+    <p><b>Exempel: </b>GET /food/1885/chart</p>
+    <!--BILD HÄR-->
+
+    <h1>GET /nutrients</h1>
+    <p>Hämtar namn och enhet av alla näringsvärden.</p>
+    <p><b>Exempel: </b>GET /nutrients</p>
+    <!--BILD HÄR-->
+</div>
