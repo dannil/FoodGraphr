@@ -69,7 +69,9 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Images\icon.ico" />
+    <EmbeddedResource Include="Content\Images\icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Content\Styles\style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

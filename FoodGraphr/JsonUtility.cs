@@ -29,7 +29,7 @@ namespace FoodGraphr
                                    {
                                        path = path,
                                        code = (int)statusCode,
-                                       message = statusCode.ToString()
+                                       message = message
                                    }, _defaultSerializer) { StatusCode = statusCode };    
         }
     }
