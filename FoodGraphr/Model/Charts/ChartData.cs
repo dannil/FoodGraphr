@@ -6,6 +6,9 @@ using System.Text;
 
 namespace FoodGraphr.Model.Charts
 {
+    /// <summary>
+    /// All data associated with a chart
+    /// </summary>
     public class ChartData
     {
         private string title;
@@ -15,6 +18,13 @@ namespace FoodGraphr.Model.Charts
         private string[] legends;
         private string[] colors;
 
+        /// <summary>
+        /// Generate a formatted string with the values in the array seperated by the seperator
+        /// If a value is 0, exclude it
+        /// </summary>
+        /// <param name="values">values to build string with</param>
+        /// <param name="separator">seperator to seperated the values with</param>
+        /// <returns></returns>
         public string GenerateParameters(object[] values, char separator)
         {
             StringBuilder builder = new StringBuilder();
@@ -36,6 +46,10 @@ namespace FoodGraphr.Model.Charts
             }
             return builder.ToString();
         }
+
+        /// <summary>
+        /// Get and set properties for all fields
+        /// </summary>
 
         public string Title
         {

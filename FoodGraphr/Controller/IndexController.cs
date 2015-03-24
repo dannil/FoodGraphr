@@ -8,6 +8,9 @@ using System.Web;
 
 namespace FoodGraphr.Controller
 {
+    /// <summary>
+    /// Load the index view and show search results
+    /// </summary>
     public class IndexController : NancyModule
     {
         private MatAPI api;
@@ -16,11 +19,13 @@ namespace FoodGraphr.Controller
         {
             api = new MatAPI();
 
+            //load default index
             Get["/"] = _ =>
             {
                 return View["index"];
             };
 
+            //load search result based on input in form
             Post["/"] = _ =>
             {
                 string name = Request.Form["name"];
