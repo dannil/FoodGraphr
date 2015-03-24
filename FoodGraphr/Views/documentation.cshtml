@@ -7,17 +7,17 @@
 <div id="documentation">
     <h1>Metoder</h1>
     <ul>
-        <li>GET /food</li>
-        <li>GET /food/{id}</li>
-        <li>GET /food/{id}/nutrients</li>
-        <li>GET /food/{id}/nutrient/{nutrient}</li>
-        <li>GET /food/{id}/chart</li>
-        <li>GET /nutrients</li>
+        <li><a href="#food">GET api/food</a></li>
+        <li><a href="#food_id">GET api/food/{id}</a></li>
+        <li><a href="#food_id_nutr">GET api/food/{id}/nutrients</a></li>
+        <li><a href="#food_id_nutr_nutr">GET api/food/{id}/nutrient/{nutrient}</a></li>
+        <li><a href="#food_id_chart">GET api/food/{id}/chart</a></li>
+        <li><a href="#nutrients">GET api/nutrients</a></li>
     </ul>
 
-    <h1>GET /food</h1>
+    <h1 id="food">GET api/food</h1>
     <p>Hämtar namn och id på alla livsmedel.</p>
-    <p><b>Exempel: </b>GET /food</p> 
+    <p><b>Exempel: </b>GET api/food</p> 
     <pre>
 [
     {
@@ -37,9 +37,9 @@
     </pre>
     <!--BILD HÄR-->
 
-    <h1>GET /food/{id}</h1>
+    <h1 id ="food_id">GET api/food/{id}</h1>
     <p>Hämtar namn, näringsvärden och en länk till en bild av en graf som representerar mängden av de olika näringsvärdena i ett livsmedel.</p>
-    <p><b>Exempel: </b>GET /food/1885</p>
+    <p><b>Exempel: </b>GET api/food/1885</p>
     <pre>
 {
     "name": "Mandelmassa",
@@ -170,24 +170,24 @@
     "zink": 1.5
 }
     </pre>
-    <h1>GET /food/{id}/nutrient/{nutrient}</h1>
+    <h1 id="food_id_nutr_nutr">GET api/food/{id}/nutrient/{nutrient}</h1>
     <p>Hämtar värdet av ett specificerat näringsämne för ett livsmedel.</p>
-    <p><b>Exempel: </b>GET /food/1885/nutrient/protein</p>
+    <p><b>Exempel: </b>GET api/food/1885/nutrient/protein</p>
     <pre>
 9.9
     </pre>
-    <h1>GET /food/{id}/chart</h1>
+    <h1 id="food_id_chart">GET api/food/{id}/chart</h1>
     <p>Hämtar länken till bilden för grafen som representerar mängden av de olika näringsvärdena i ett livsmedel.</p>
-    <p><b>Exempel: </b>GET /food/1885/chart</p>
+    <p><b>Exempel: </b>GET api/food/1885/chart</p>
     <pre>
 http://chart.apis.google.com/chart?chs=540x280&chd=t:23,9.9,51.5,3.5,0.1,10.8,1.3&chl=23%20g|9,9%20g|51,5
 %20g|3,5%20g|0,1%20g|10,8%20g|1,3%20g&chdl=Fett%20(23%20g)|Protein%20(9,9%20g)|Kolhydrater%20(51,5%20g)|F
 ibrer%20(3,5%20g)|Salt%20(0,1%20g)|Vatten%20(10,8%20g)|Aska%20(1,3%20g)&chco=EBC30C|D42000|29E14E|DDDDDD|
 473E3F|4D8DEB|0F1C2E&cht=p"
     </pre>
-    <h1>GET /nutrients</h1>
-    <p>Hämtar namn och enhet av alla näringsvärden.</p>
-    <p><b>Exempel: </b>GET /nutrients</p>
+    <h1 id="nutrients">GET api/nutrients</h1>
+    <p>Hämtar namn och enhet för alla näringsvärden.</p>
+    <p><b>Exempel: </b>GET api/nutrients</p>
     <pre>
 [
 	{
