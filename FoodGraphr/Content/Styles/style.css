@@ -1,5 +1,7 @@
 ﻿body, input[type="text"], button {
     font-family: Candara;
+}
+input[type="text"], button {
     font-size: 18px;
 }
 body {
