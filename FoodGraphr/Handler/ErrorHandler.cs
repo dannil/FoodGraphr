@@ -14,17 +14,17 @@ namespace FoodGraphr.Handler
         private readonly IEnumerable<ISerializer> serializers;
         private IViewFactory viewFactory;
 
-        private readonly IDictionary<HttpStatusCode, string> errorpages = new Dictionary<HttpStatusCode, string>
-        {
-            { HttpStatusCode.NotFound, "404.cshtml" },
-            { HttpStatusCode.InternalServerError, "500.cshtml" },
-        }; 
-
         public ErrorHandler(IEnumerable<ISerializer> serializers, IViewFactory viewFactory)
         {
             this.serializers = serializers;
             this.viewFactory = viewFactory;
         }
+
+        private readonly IDictionary<HttpStatusCode, string> errorpages = new Dictionary<HttpStatusCode, string>
+        {
+            { HttpStatusCode.NotFound, "404.cshtml" },
+            { HttpStatusCode.InternalServerError, "500.cshtml" },
+        };
 
         public bool HandlesStatusCode(HttpStatusCode statusCode, NancyContext context)
         {
@@ -61,12 +61,7 @@ namespace FoodGraphr.Handler
             if (request.Url.Path.StartsWith("/api"))
             {
                 var serializer = serializers.FirstOrDefault(s => s.CanSerialize("application/json"));
-                context.Response = new JsonResponse(new
-                {
-                    path = request.Url.Path,
-                    code = HttpStatusCode.NotFound,
-                    error = "resource not found"
-                }, serializer) { StatusCode = HttpStatusCode.NotFound };
+                context.Response = JsonUtility.DoResponse(request.Url.Path, statusCode, statusCode.ToString());
             }
             else
             {

@@ -69,7 +69,7 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\nancy-logo.png" />
+    <Content Include="Content\Images\icon.ico" />
     <Content Include="Content\Styles\style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -115,9 +115,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

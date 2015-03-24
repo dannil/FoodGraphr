@@ -13,11 +13,9 @@ namespace FoodGraphr.Controller
 
         public FoodController() : base("/food")
         {
-            this.api = new MatAPI();
+            api = new MatAPI();
 
-            Dictionary<string, Nutrient> test = api.GetNutrients();
-
-            Get["/{id}"] = parameters =>
+            Get["/{id:int}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
                 if (f.Name == null)

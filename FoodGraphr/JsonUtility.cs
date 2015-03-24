@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Nancy;
+using Nancy.Responses;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,17 @@ namespace FoodGraphr
             };
 
             return JsonConvert.SerializeObject(o, settings);
+        }
+
+        public static JsonResponse DoResponse(string path, HttpStatusCode statusCode, string message) {
+            Nancy.Responses.DefaultJsonSerializer _defaultSerializer = new Nancy.Responses.DefaultJsonSerializer(); 
+            
+            return new JsonResponse(new
+                                   {
+                                       path = path,
+                                       code = (int)statusCode,
+                                       message = statusCode.ToString()
+                                   }, _defaultSerializer) { StatusCode = statusCode };    
         }
     }
 }
