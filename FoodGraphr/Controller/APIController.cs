@@ -19,6 +19,16 @@ namespace FoodGraphr.Controller
         {
             api = new MatAPI();
 
+            Get["/food"] = parameters =>
+            {
+                List<Food> foods = api.GetFoods();
+
+                var response = (Response)JsonUtility.ConvertToJson(foods);
+                response.ContentType = "application/json";
+
+                return response;
+            };
+
             Get["/food/{id}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);

@@ -13,7 +13,8 @@ namespace FoodGraphr
         {
             JsonSerializerSettings settings = new JsonSerializerSettings
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                NullValueHandling = NullValueHandling.Ignore
             };
 
             return JsonConvert.SerializeObject(o, settings);
