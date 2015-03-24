@@ -62,6 +62,18 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
+            Get["/food/{id}/nutrient/{nutrient}"] = parameters =>
+            {
+                Food f = api.GetFood(parameters.id);
+
+                float n = f.NutrientValues[parameters.nutrient];
+
+                var response = (Response)JsonUtility.ConvertToJson(n);
+                response.ContentType = "application/json";
+
+                return response;
+            };
+
             Get["/nutrients"] = parameters =>
             {
                 List<Nutrient> nutrients = new List<Nutrient>();
