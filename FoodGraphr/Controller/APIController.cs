@@ -24,7 +24,7 @@ namespace FoodGraphr.Controller
                 List<Food> foods = api.GetFoods();
 
                 var response = (Response)JsonUtility.ConvertToJson(foods);
-                response.ContentType = "application/json";
+                response.ContentType = "application/json; charset=utf-8";
 
                 return response;
             };
@@ -34,10 +34,10 @@ namespace FoodGraphr.Controller
                 Food f = api.GetFood(parameters.id);
                 f.GeneratePieChart();
 
-                var goodResponse = (Response)JsonUtility.ConvertToJson(f);
-                goodResponse.ContentType = "application/json";
+                var response = (Response)JsonUtility.ConvertToJson(f);
+                response.ContentType = "application/json; charset=utf-8";
 
-                return goodResponse;
+                return response;
             };
 
             Get["/food/{id:int}/chart"] = parameters =>
@@ -46,7 +46,7 @@ namespace FoodGraphr.Controller
                 f.GeneratePieChart();
 
                 var response = (Response)JsonUtility.ConvertToJson(f.ChartUrl);
-                response.ContentType = "application/json";
+                response.ContentType = "application/json; charset=utf-8";
 
                 return response;
             };
@@ -57,7 +57,7 @@ namespace FoodGraphr.Controller
                 f.GeneratePieChart();
 
                 var response = (Response)JsonUtility.ConvertToJson(f.NutrientValues);
-                response.ContentType = "application/json";
+                response.ContentType = "application/json; charset=utf-8";
 
                 return response;
             };
@@ -69,7 +69,7 @@ namespace FoodGraphr.Controller
                 float n = f.NutrientValues[parameters.nutrient];
 
                 var response = (Response)JsonUtility.ConvertToJson(n);
-                response.ContentType = "application/json";
+                response.ContentType = "application/json; charset=utf-8";
 
                 return response;
             };
@@ -83,7 +83,7 @@ namespace FoodGraphr.Controller
                 }
 
                 var response = (Response)JsonUtility.ConvertToJson(nutrients);
-                response.ContentType = "application/json";
+                response.ContentType = "application/json; charset=utf-8";
 
                 return response;
             };
