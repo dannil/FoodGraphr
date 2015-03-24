@@ -22,5 +22,10 @@ namespace FoodGraphr
                 return tempFavicon;
             }
         }
+
+        protected override IRootPathProvider RootPathProvider
+        {
+            get { return new CustomRootPathProvider(); }
+        }
     }
 }
