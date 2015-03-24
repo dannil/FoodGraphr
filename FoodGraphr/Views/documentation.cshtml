@@ -19,28 +19,95 @@
     <p>Hämtar namn och id på alla livsmedel.</p>
     <p><b>Exempel: </b>GET /food</p> 
     <pre>
-    [
-        {
-            name: "Talg nöt",
-            number: 1
-        },
-        {
-            name: "Späck gris",
-            number: 2
-        },
-        {
-            name: "Ister gris",
-            number: 3
-        },
-        etc…
-    ]
+[
+    {
+        name: "Talg nöt",
+        number: 1
+    },
+    {
+        name: "Späck gris",
+        number: 2
+    },
+    {
+        name: "Ister gris",
+        number: 3
+    },
+    etc…
+]
     </pre>
     <!--BILD HÄR-->
 
     <h1>GET /food/{id}</h1>
     <p>Hämtar namn, näringsvärden och en länk till en bild av en graf som representerar mängden av de olika näringsvärdena i ett livsmedel.</p>
     <p><b>Exempel: </b>GET /food/1885</p>
-    <!--BILD HÄR-->      
+    <pre>
+{
+    "name": "Mandelmassa",
+    "number": 1885,
+    "chartUrl": "http://chart.apis.google.com/chart?chs=540x280&chd=t:23,9.9,51.5,3.5,0.1,10.8,1.3&chl=
+                 23%20g|9,9%20g|51,5%20g|3,5%20g|0,1%20g|10,8%20g|1,3%20g&chdl=Fett%20(23%20g)|Protein%
+                 20(9,9%20g)|Kolhydrater%20(51,5%20g)|Fibrer%20(3,5%20g)|Salt%20(0,1%20g)|Vatten%20(10,8
+                 %20g)|Aska%20(1,3%20g)&chco=EBC30C|D42000|29E14E|DDDDDD|473E3F|4D8DEB|0F1C2E&cht=p",
+    "nutrientValues": 
+    {
+        "energyKj": 1923,
+        "energyKcal": 460,
+        "protein": 9.9,
+        "fat": 23,
+        "carbohydrates": 51.5,
+        "fibres": 3.5,
+        "salt": 0.1,
+        "ash": 1.3,
+        "water": 10.8,
+        "alcohol": 0,
+        "monosaccharides": 0.4,
+        "disaccharides": 50,
+        "saccharose": 49,
+        "wholegrain": 0,
+        "saturatedFattyAcids": 1.8,
+        "fattyAcid40100": 0,
+        "fattyAcid120": 0,
+        "fattyAcid140": 0,
+        "fattyAcid160": 1.4,
+        "fattyAcid180": 0.4,
+        "fattyAcid200": 0,
+        "monounsaturatedFattyAcids": 15.4,
+        "fattyAcid161": 0.1,
+        "fattyAcid181": 15.3,
+        "sumPolyunsaturatedFattyAcids": 4.9,
+        "fattyAcid182": 4.9,
+        "fattyAcid204": 0,
+        "fattyAcid183": 0,
+        "epa": 0,
+        "dpa": 0,
+        "dha": 0,
+        "transFattyAcids": 0,
+        "cholesterol": 0,
+        "retinolEquivalents": 13,
+        "retinol": 12,
+        "betacarotene": 6,
+        "vitaminD": 0,
+        "vitaminE": 12,
+        "thiamine": 0.11,
+        "riboflavin": 0.35,
+        "vitaminC": 0,
+        "niacin": 1.6,
+        "niacinEquivalents": 3.3,
+        "vitaminB6": 0.06,
+        "vitaminB12": 0,
+        "phosphorous": 240,
+        "folate": 45,
+        "trash": 0,
+        "iron": 1.9,
+        "calcium": 59,
+        "potassium": 270,
+        "magnesium": 140,
+        "sodium": 33,
+        "selenium": 1,
+        "zink": 1.5
+    }
+}
+    </pre>      
 
     <h1>GET /food/{id}/nutrients</h1>
     <p>Hämtar alla näringsvärden för ett livsmedel.</p>
