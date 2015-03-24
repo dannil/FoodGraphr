@@ -11,6 +11,9 @@ using FoodGraphr.Model.API;
 
 namespace FoodGraphr.Controller
 {
+    /// <summary>
+    /// Controller for creating json response for the request on our API
+    /// </summary>
     public class APIController : NancyModule
     {
         private MatAPI api;
@@ -19,6 +22,7 @@ namespace FoodGraphr.Controller
         {
             api = new MatAPI();
 
+            //return all available foodstuff
             Get["/food"] = parameters =>
             {
                 List<Food> foods = api.GetFoods();
@@ -29,6 +33,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
+            //return all info(name, chart-link and nutrients) on requested food id
             Get["/food/{id:int}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
@@ -49,6 +54,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
+            //return link to chart based on requested food id
             Get["/food/{id:int}/chart"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
@@ -69,6 +75,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
+            //return all nutrients of the requested food id
             Get["/food/{id:int}/nutrients"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
@@ -89,6 +96,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
+            //return a requested nutrient value from a requested food id
             Get["/food/{id:int}/nutrient/{nutrient}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
@@ -118,6 +126,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
+            //return name of all avaliavle nutrients and their unit of measurement
             Get["/nutrients"] = parameters =>
             {
                 List<Nutrient> nutrients = new List<Nutrient>();

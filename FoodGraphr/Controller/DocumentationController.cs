@@ -7,6 +7,9 @@ using FoodGraphr.Model.API;
 
 namespace FoodGraphr.Controller
 {
+    /// <summary>
+    /// To load the documentation view
+    /// </summary>
     public class DocumentationController: NancyModule
     {
         private MatAPI api;
@@ -14,6 +17,7 @@ namespace FoodGraphr.Controller
         {
             api = new MatAPI();
 
+            //load view
             Get["/"] = _ =>
             {
                 return View["documentation"];
