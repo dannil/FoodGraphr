@@ -36,17 +36,15 @@ body {
     padding: 20px;
 }
 
-#content p, documentation p {
+#content p, #documentation p {
     margin: 0 0 6px 0;
     padding: 0;
 }
 
-
-
 #foods {
 }
 
-#foods table {
+#foods table, #error {
     margin: 0 auto;
     text-align: center;
 }
