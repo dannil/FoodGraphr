@@ -6,6 +6,7 @@ using Nancy.ErrorHandling;
 using Nancy;
 using Nancy.Responses;
 using Nancy.ViewEngines;
+using FoodGraphr.Utility;
 
 namespace FoodGraphr.Handler
 {
