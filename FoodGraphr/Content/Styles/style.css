@@ -75,8 +75,9 @@ body {
     text-decoration: underline;
 }
 
-#footer{
+#footer, #error{
     text-align: center;
     font-size: 25px;
     background-color: #FFFFFF;
+    border: 1px solid #000;
 }
