@@ -62,7 +62,7 @@ namespace FoodGraphr.Controller
                 return response;
             };
 
-            Get["/food/{id:int}/nutrient/{nutrient:string}"] = parameters =>
+            Get["/food/{id:int}/nutrient/{nutrient}"] = parameters =>
             {
                 Food f = api.GetFood(parameters.id);
 
