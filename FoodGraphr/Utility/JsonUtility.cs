@@ -40,7 +40,7 @@ namespace FoodGraphr.Utility
         /// <param name="path">The path the user was on when the response happened.</param>
         /// <param name="statusCode">The current status code of the request.</param>
         /// <param name="message">The message to be displayed to the user.</param>
-        /// <returns></returns>
+        /// <returns>A JsonResponse which is served by the web framework.</returns>
         public static JsonResponse DoResponse(string path, HttpStatusCode statusCode, string message) {
             DefaultJsonSerializer defaultSerializer = new DefaultJsonSerializer(); 
             
